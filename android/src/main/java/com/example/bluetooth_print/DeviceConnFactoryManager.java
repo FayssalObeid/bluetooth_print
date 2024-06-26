@@ -1,4 +1,4 @@
-package com.example.bluetooth_print;
+package android.src.main.java.com.example.bluetooth_print;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -246,17 +246,17 @@ public class DeviceConnFactoryManager {
         private CONN_METHOD connMethod;
         private Context context;
 
-        public DeviceConnFactoryManager.Build setMacAddress(String macAddress) {
+        public Build setMacAddress(String macAddress) {
             this.macAddress = macAddress;
             return this;
         }
 
-        public DeviceConnFactoryManager.Build setConnMethod(CONN_METHOD connMethod) {
+        public Build setConnMethod(CONN_METHOD connMethod) {
             this.connMethod = connMethod;
             return this;
         }
 
-        public DeviceConnFactoryManager.Build setContext(Context context) {
+        public Build setContext(Context context) {
             this.context = context;
             return this;
         }

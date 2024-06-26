@@ -1,4 +1,4 @@
-package com.example.bluetooth_print;
+package android.src.main.java.com.example.bluetooth_print;
 
 public enum PrinterCommand {
     /**

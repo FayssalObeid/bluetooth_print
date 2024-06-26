@@ -1,4 +1,4 @@
-package com.example.bluetooth_print;
+package android.src.main.java.com.example.bluetooth_print;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -91,7 +91,14 @@ public class PrintContent {
                   }else if("image".equals(type)){
                         byte[] bytes = Base64.decode(content, Base64.DEFAULT);
                         Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                        esc.addRastBitImage(bitmap, 576, 0);
+
+                        if(bitmap.getHeight() > bitmap.getWidth()){
+                              // Crop the image to maintain the aspect ratio and fit within the maximum height
+                              int startY = (bitmap.getHeight() - bitmap.getWidth()) / 2;
+                              bitmap = Bitmap.createBitmap(bitmap, 0, startY, bitmap.getWidth(), bitmap.getWidth());
+                        }
+                        
+                        esc.addRastBitImage(bitmap, width, 0);
                   }
 
                   if(linefeed == 1){
