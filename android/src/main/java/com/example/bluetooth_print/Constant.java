@@ -1,4 +1,4 @@
-package android.src.main.java.com.example.bluetooth_print;
+package com.example.bluetooth_print;
 
 public class Constant {
     public static final String SERIALPORTPATH = "SerialPortPath";
